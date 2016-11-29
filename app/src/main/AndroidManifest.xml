@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kushagra.meetupapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/GreenIt">
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity"
+            android:label="Login"
+        >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+
+
+        </activity>
+        <activity android:name=".AllCoursesActivity"
+            android:label="All Courses"
+        />
+
+        <activity android:name=".extra.SplashScreen">
+            android:label="@string/app_name"
+
+
+
+        </activity>
+        <activity android:name=".extra.SignInActivity"
+            android:label="Sign In" />
+        <activity android:name=".FormActivity" />
+        <activity android:name=".StartNewStudentQueryActivity" />
+
+        <activity android:name=".ScheduleGenerateActivity" />
+        <activity android:name=".TaQueryActivity"
+            android:label="TA Query" />
+        <activity android:name=".StudentFollowUpQueryActivity"
+            android:label="Query"/>
+        <activity
+            android:name=".StudentQueryActivity"
+            android:label="My Queries"
+            android:parentActivityName=".AllCoursesActivity"
+            android:theme="@style/GreenIt.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kushagra.meetupapp.AllCoursesActivity" />
+        </activity>
+        <activity android:name=".StartNewTaQueryActivity"
+            android:label="New Query" />
+        <activity android:name=".TaFollowUpQueryActivity"
+            android:label="Query" />
+
+        <service android:name=".background.PingService"
+            android:exported="false"
+            android:enabled="true"
+            android:stopWithTask="false" />
+
+        <activity
+            android:name=".navDrawer.CommonCoursesListActivity"
+            android:label="how i met my ta"
+            android:theme="@style/GreenIt.NoActionBar">
+
+
+
+
+
+
+        </activity>
+
+    </application>
+
+</manifest>
